@@ -5,10 +5,22 @@
     (Math/pow x2 x2)))
 
 (defn spiff [v]
-  :-)
+  (let [v1 (get v 0)
+        v3 (get v 2)]
+    (+ v1 v3)))
+
+(comment
+(defn spiff [v]
+  (when (vector? v)
+    (let [v1 (or (get v 0) 0)
+          v3 (or (get v 2) 0)]
+      (+ v1 v3))))
+)
 
 (defn cutify [v]
-  :-)
+  (conj v "<3"))
+
+
 
 (defn spiff-destructuring [v]
   :-)
