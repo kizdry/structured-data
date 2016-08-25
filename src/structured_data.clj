@@ -10,12 +10,12 @@
     (+ v1 v3)))
 
 (comment
-(defn spiff [v]
-  (when (vector? v)
-    (let [v1 (or (get v 0) 0)
-          v3 (or (get v 2) 0)]
-      (+ v1 v3))))
-)
+ (defn spiff [v]
+   (when (vector? v)
+     (let [v1 (or (get v 0) 0)
+           v3 (or (get v 2) 0)]
+       (+ v1 v3)))))
+
 
 (defn cutify [v]
   (conj v "<3"))
@@ -30,11 +30,25 @@
 (defn rectangle [bottom-left top-right]
   [bottom-left top-right])
 
-(defn width [rectangle]
-  :-)
+;(defn width [ [[x1 y1] [x2 y2]] ]
+;  (- y2 y1))
+(defn width [ [[x1 y1] [x2 y2]] ]
+  (let [h (- y2 y1)]
+    (cond
+      (pos? h) h
+      (neg? h) (- h)
+      :else 0)))
 
-(defn height [rectangle]
-  :-)
+
+;(defn height [ [[x1 y1] [x2 y2]] ]
+;  (- x2 x1))
+(defn height [ [[x1 y1] [x2 y2]] ]
+  (let [w (- x2 x1)]
+    (cond
+      (pos? w) w
+      (neg? w) (- w)
+      :else 0)))
+
 
 (defn square? [rectangle]
   :-)
