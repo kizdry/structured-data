@@ -30,24 +30,12 @@
 (defn rectangle [bottom-left top-right]
   [bottom-left top-right])
 
-;(defn width [ [[x1 y1] [x2 y2]] ]
-;  (- y2 y1))
-(defn width [ [[x1 y1] [x2 y2]] ]
-  (let [h (- y2 y1)]
-    (cond
-      (pos? h) h
-      (neg? h) (- h)
-      :else 0)))
-
-
-;(defn height [ [[x1 y1] [x2 y2]] ]
-;  (- x2 x1))
 (defn height [ [[x1 y1] [x2 y2]] ]
-  (let [w (- x2 x1)]
-    (cond
-      (pos? w) w
-      (neg? w) (- w)
-      :else 0)))
+  (Math/abs (- y1 y2)))
+
+
+(defn width [ [[x1 y1] [x2 y2]] ]
+  (Math/abs (- x1 x2)))
 
 
 (defn square? [rectangle]
