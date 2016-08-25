@@ -41,8 +41,8 @@
 (defn square? [rectangle]
   (= (width rectangle) (height rectangle)))
 
-(defn area [rectangle]
-  :-)
+(defn area [[[x1 y1] [x2 y2]]]
+  (* (Math/abs (- x1 x2)) (Math/abs (- y1 y2))))
 
 (defn contains-point? [rectangle point]
   :-)
