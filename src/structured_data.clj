@@ -60,7 +60,7 @@
   (count (get book :title)))
 
 (defn author-count [book]
-  :-)
+  (count (get book :authors)))
 
 (defn multiple-authors? [book]
   :-)
