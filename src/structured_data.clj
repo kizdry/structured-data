@@ -63,7 +63,7 @@
   (count (get book :authors)))
 
 (defn multiple-authors? [book]
-  :-)
+  (>= (author-count book) 2))
 
 (defn add-author [book new-author]
   :-)
