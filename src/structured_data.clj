@@ -111,8 +111,9 @@
   (let [authors (get book :authors)]
     (assoc book :authors (set authors))))
 
+;;exercise 23
 (defn has-author? [book author]
-  :-)
+  (contains? (get book :authors) author))
 
 (defn authors [books]
   :-)
