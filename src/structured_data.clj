@@ -80,19 +80,24 @@
   (let [get-sec (fn [col] (get col 1))]
     (map get-sec collection)))
 
+;;exercise 17
 (defn titles [books]
   (map :title books))
 
+;;exercise 19
 (defn monotonic? [a-seq]
     (or
     (apply <= a-seq)
     (apply >= a-seq)))
 
+;;exercise 18
 (defn stars [n]
   (apply str (repeat n "*")))
 
 (defn toggle [a-set elem]
-  :-)
+  (if (contains? a-set elem)
+    (disj a-set elem)
+    (conj a-set elem)))
 
 (defn contains-duplicates? [a-seq]
   :-)
