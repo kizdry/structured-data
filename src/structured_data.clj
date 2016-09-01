@@ -94,13 +94,17 @@
 (defn stars [n]
   (apply str (repeat n "*")))
 
+;;exercise 20
 (defn toggle [a-set elem]
   (if (contains? a-set elem)
     (disj a-set elem)
     (conj a-set elem)))
 
+;;exercise 21
 (defn contains-duplicates? [a-seq]
-  :-)
+  (not=
+    (count a-seq)
+    (count (set a-seq))))
 
 (defn old-book->new-book [book]
   :-)
