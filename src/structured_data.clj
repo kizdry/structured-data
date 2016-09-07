@@ -120,10 +120,14 @@
   [books]
   (set (apply concat (map :authors books))))
 
-(defn all-author-names [books]
-  :-)
+(defn all-author-names
+  "exercise 25"
+  [books]
+  (set (map :name (authors books))))
 
-(defn author->string [author]
+(defn author->string
+  "exercise 26"
+  [author]
   :-)
 
 (defn authors->string [authors]
