@@ -108,15 +108,17 @@
 
 ;;exercise 22
 (defn old-book->new-book [book]
-  (let [authors (get book :authors)]
+  (let [authors (:authors book)]
     (assoc book :authors (set authors))))
 
 ;;exercise 23
 (defn has-author? [book author]
-  (contains? (get book :authors) author))
+  (contains? (:authors book) author))
 
-(defn authors [books]
-  :-)
+(defn authors
+  "exercise 24"
+  [books]
+  (set (apply concat (map :authors books))))
 
 (defn all-author-names [books]
   :-)
