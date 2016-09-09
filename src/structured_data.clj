@@ -128,7 +128,17 @@
 (defn author->string
   "exercise 26"
   [author]
-  :-)
+  (str
+    (:name author)
+    (if (or (contains? author :birth-year)
+            (contains? author :death-year))
+      (str
+        " ("
+        (:birth-year author)
+        " - "
+        (:death-year author)
+        ")")
+      "")))
 
 (defn authors->string [authors]
   :-)
