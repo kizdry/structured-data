@@ -140,8 +140,10 @@
         ")")
       "")))
 
-(defn authors->string [authors]
-  :-)
+(defn authors->string
+  "exercise 27"
+  [authors]
+  (apply str (interpose ", " (map author->string authors))))
 
 (defn book->string [book]
   :-)
