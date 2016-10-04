@@ -150,10 +150,19 @@
   (str (:title book) ", written by " (authors->string (:authors book))))
 
 (defn books->string [books]
-  :-)
+  "exercise 29"
+  (let [cnt (count books)]
+    (if (zero? cnt)
+      "No books."
+      (str
+        (str cnt " book" (when (> cnt 1) "s") ". ")
+        (apply str (interpose ". " (map book->string books)))
+        "."))))
+
 
 (defn books-by-author [author books]
-  :-)
+  "exercise 30"
+  (filter #(has-author? % author) books))
 
 (defn author-by-name [name authors]
   :-)
